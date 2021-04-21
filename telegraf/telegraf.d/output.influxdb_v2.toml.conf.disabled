@@ -1,0 +1,26 @@
+[[outputs.influxdb_v2]]
+  urls = [ "http://127.0.0.1:8086" ]
+  token = ""
+  organization = ""
+
+  bucket = "kafka"
+
+  timeout = "3s"
+
+  user_agent = "telegraf"
+
+  # tls_ca = "/etc/telegraf/ca.pem"
+  # tls_cert = "/etc/telegraf/cert.pem"
+  # tls_key = "/etc/telegraf/key.pem"
+  # insecure_skip_verify = false
+
+  # HTTP Proxy override, if unset values the standard proxy environment
+  # variables are consulted to determine which proxy, if any, should be used.
+  #http_proxy = "http://corporate.proxy:3128"
+
+  # Additional HTTP headers
+  #http_headers = {"X-Special-Header" = "Special-Value"}
+
+  content_encoding = "identity"
+
+  influx_uint_support = true

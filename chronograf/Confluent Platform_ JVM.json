@@ -1,0 +1,1556 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.7",
+		"sources": {
+			"0": {
+				"name": "http://192.0.2.11:8087",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "49",
+		"cells": [
+			{
+				"i": "71f46c7c-38c2-41b8-9c38-6656b8e5dbcc",
+				"x": 0,
+				"y": 7,
+				"w": 6,
+				"h": 3,
+				"name": "NIO Memory Pool Usage - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"MemoryUsed\") AS \"Bytes Used\" FROM \"telegraf\"..\"java.nio_BufferPool\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:),\"name\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.nio_BufferPool",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Bytes Used",
+									"args": [
+										{
+											"value": "MemoryUsed",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"name"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "bytes",
+						"prefix": "",
+						"suffix": "B",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/71f46c7c-38c2-41b8-9c38-6656b8e5dbcc"
+				}
+			},
+			{
+				"i": "d52566c7-d96a-4557-91fa-e57f5bbf700d",
+				"x": 0,
+				"y": 10,
+				"w": 6,
+				"h": 3,
+				"name": "Memory Pool Usage - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"Usage.used\") AS \"Bytes Used\" FROM \"telegraf\"..\"java.lang_MemoryPool\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:),\"name\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.lang_MemoryPool",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Bytes Used",
+									"args": [
+										{
+											"value": "Usage.used",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"name"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "bytes",
+						"prefix": "",
+						"suffix": "B",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/d52566c7-d96a-4557-91fa-e57f5bbf700d"
+				}
+			},
+			{
+				"i": "926f287c-49d0-48bc-8e71-ede8b298cc66",
+				"x": 6,
+				"y": 7,
+				"w": 6,
+				"h": 3,
+				"name": "Compliation Time Utilization - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT non_negative_derivative(last(\"TotalCompilationTime\"),1s) / 10 AS \"GC Time\" FROM \"telegraf\"..\"java.lang_Compilation\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_derivative(last(\"TotalCompilationTime\"),1s) / 10 AS \"GC Time\" FROM \"telegraf\"..\"java.lang_Compilation\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "utilization",
+						"prefix": "",
+						"suffix": "%",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/926f287c-49d0-48bc-8e71-ede8b298cc66"
+				}
+			},
+			{
+				"i": "9a71ff0f-82af-4c0a-a4e5-56bd0b7ca45b",
+				"x": 6,
+				"y": 10,
+				"w": 6,
+				"h": 3,
+				"name": "Threads Started - :environment: - :application: - :host: (clone 1)",
+				"queries": [
+					{
+						"query": "SELECT non_negative_derivative(last(\"TotalStartedThreadCount\"),1s) AS \"Thread Start Rate\" FROM \"telegraf\"..\"java.lang_Threading\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_derivative(last(\"TotalStartedThreadCount\"),1s) AS \"Thread Start Rate\" FROM \"telegraf\"..\"java.lang_Threading\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "threads/sec",
+						"prefix": "",
+						"suffix": "",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/9a71ff0f-82af-4c0a-a4e5-56bd0b7ca45b"
+				}
+			},
+			{
+				"i": "b91d5b2d-bcb2-4ca0-8049-5235418cabeb",
+				"x": 8,
+				"y": 0,
+				"w": 4,
+				"h": 1,
+				"name": "Threads - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"ThreadCount\") FROM \"telegraf\"..\"java.lang_Threading\" WHERE time > :dashboardTime: and \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.lang_Threading",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "",
+									"args": [
+										{
+											"value": "ThreadCount",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/b91d5b2d-bcb2-4ca0-8049-5235418cabeb"
+				}
+			},
+			{
+				"i": "648a96e8-3edc-4306-802c-a7ea92ce74f4",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 1,
+				"name": "Unloaded Classes - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"UnloadedClassCount\") FROM \"telegraf\"..\"java.lang_ClassLoading\" WHERE time > :dashboardTime: and \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.lang_ClassLoading",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "",
+									"args": [
+										{
+											"value": "UnloadedClassCount",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/648a96e8-3edc-4306-802c-a7ea92ce74f4"
+				}
+			},
+			{
+				"i": "d9d743c3-80c1-4e96-b7ec-63f7655a471d",
+				"x": 6,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "GC Time Utilization - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT non_negative_derivative(last(\"CollectionTime\"),1s) / 10 AS \"GC Time\" FROM \"telegraf\"..\"java.lang_GarbageCollector\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:),\"name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_derivative(last(\"CollectionTime\"),1s) / 10 AS \"GC Time\" FROM \"telegraf\"..\"java.lang_GarbageCollector\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:),\"name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "utilization",
+						"prefix": "",
+						"suffix": "%",
+						"base": "raw",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/d9d743c3-80c1-4e96-b7ec-63f7655a471d"
+				}
+			},
+			{
+				"i": "6f62ee01-d437-4bbf-b69e-caaf494f21de",
+				"x": 0,
+				"y": 4,
+				"w": 6,
+				"h": 3,
+				"name": "Non-Heap Usage - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"NonHeapMemoryUsage.used\") AS \"Non-Heap Used\", last(\"HeapMemoryUsage.init\") AS \"Initial Non-Heap\", last(\"HeapMemoryUsage.committed\") AS \"Allocated Non-Heap\" FROM \"telegraf\"..\"java.lang_Memory\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"application\"=':application:' AND \"environment\"=':environment:' AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.lang_Memory",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Non-Heap Used",
+									"args": [
+										{
+											"value": "NonHeapMemoryUsage.used",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Initial Non-Heap",
+									"args": [
+										{
+											"value": "HeapMemoryUsage.init",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Allocated Non-Heap",
+									"args": [
+										{
+											"value": "HeapMemoryUsage.committed",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "bytes",
+						"prefix": "",
+						"suffix": "B",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "f8c32b28-e3a2-4a51-ba66-46524212ae9d",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f7498106-f34c-41bb-bb7d-3b688e900879",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9cde7b4d-f5e0-4996-9873-e45120e4590c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/6f62ee01-d437-4bbf-b69e-caaf494f21de"
+				}
+			},
+			{
+				"i": "7ec88fdb-b221-491d-8aba-333c3078c4b5",
+				"x": 0,
+				"y": 1,
+				"w": 6,
+				"h": 3,
+				"name": "Heap Usage - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"HeapMemoryUsage.used\") AS \"Heap Used\", last(\"HeapMemoryUsage.init\") AS \"Initial Heap\", last(\"HeapMemoryUsage.committed\") AS \"Allocated Heap\" FROM \"telegraf\"..\"java.lang_Memory\" WHERE time > :dashboardTime: AND time < :upperDashboardTime: AND \"application\"=':application:' AND \"environment\"=':environment:' AND \"host\"=':host:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.lang_Memory",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Heap Used",
+									"args": [
+										{
+											"value": "HeapMemoryUsage.used",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Initial Heap",
+									"args": [
+										{
+											"value": "HeapMemoryUsage.init",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								},
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "Allocated Heap",
+									"args": [
+										{
+											"value": "HeapMemoryUsage.committed",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "bytes",
+						"prefix": "",
+						"suffix": "B",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "f8c32b28-e3a2-4a51-ba66-46524212ae9d",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "f7498106-f34c-41bb-bb7d-3b688e900879",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "9cde7b4d-f5e0-4996-9873-e45120e4590c",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/7ec88fdb-b221-491d-8aba-333c3078c4b5"
+				}
+			},
+			{
+				"i": "bc8074aa-7fd7-439f-b8ec-2fa7e85ef866",
+				"x": 6,
+				"y": 1,
+				"w": 6,
+				"h": 3,
+				"name": "Garbage Collections - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT non_negative_difference(last(\"CollectionCount\")) AS \"Garbage Collections\" FROM \"telegraf\"..\"java.lang_GarbageCollector\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:),\"name\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT non_negative_difference(last(\"CollectionCount\")) AS \"Garbage Collections\" FROM \"telegraf\"..\"java.lang_GarbageCollector\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:' GROUP BY time(:interval:),\"name\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"0",
+							""
+						],
+						"label": "GCs",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/bc8074aa-7fd7-439f-b8ec-2fa7e85ef866"
+				}
+			},
+			{
+				"i": "61e30e72-82e3-4860-93a5-f135ea5ee980",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 1,
+				"name": "Loaded Classes - :environment: - :application: - :host:",
+				"queries": [
+					{
+						"query": "SELECT last(\"LoadedClassCount\") FROM \"telegraf\"..\"java.lang_ClassLoading\" WHERE time > :dashboardTime: and \"environment\"=':environment:' AND \"application\"=':application:' AND \"host\"=':host:'",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "java.lang_ClassLoading",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "last",
+									"type": "func",
+									"alias": "",
+									"args": [
+										{
+											"value": "LoadedClassCount",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"application": [
+									":application:"
+								],
+								"environment": [
+									":environment:"
+								],
+								"host": [
+									":host:"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "single-stat",
+				"colors": [
+					{
+						"id": "base",
+						"type": "text",
+						"hex": "#00C9FF",
+						"name": "laser",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/cells/61e30e72-82e3-4860-93a5-f135ea5ee980"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":environment:",
+				"values": [
+					{
+						"value": "prod",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "b63a047a-9558-4aa1-a1aa-212baae7b553",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"java.lang_Memory\" WITH KEY=\"environment\" WHERE \"platform\"='kafka'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/templates/b63a047a-9558-4aa1-a1aa-212baae7b553"
+				}
+			},
+			{
+				"tempVar": ":application:",
+				"values": [
+					{
+						"value": "cp-control-center",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "19f9063c-2055-424b-b8df-7d4c38c6b3db",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"java.lang_Memory\" WITH KEY=\"application\" WHERE \"environment\"=':environment:'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/templates/19f9063c-2055-424b-b8df-7d4c38c6b3db"
+				}
+			},
+			{
+				"tempVar": ":host:",
+				"values": [
+					{
+						"value": "prod0",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "3a2ff18f-50ef-4403-8b1e-fa61c86b5b3d",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"java.lang_Memory\" WITH KEY=\"host\" WHERE \"environment\"=':environment:' AND \"application\"=':application:'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/49/templates/3a2ff18f-50ef-4403-8b1e-fa61c86b5b3d"
+				}
+			}
+		],
+		"name": "Confluent Platform: JVM",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/49",
+			"cells": "/chronograf/v1/dashboards/49/cells",
+			"templates": "/chronograf/v1/dashboards/49/templates"
+		}
+	}
+}

@@ -1,0 +1,843 @@
+{
+	"meta": {
+		"chronografVersion": "1.8.7",
+		"sources": {
+			"0": {
+				"name": "http://192.168.7.10:8087",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": "50",
+		"cells": [
+			{
+				"i": "4092cccb-b3d2-4d0f-8c38-98fbda6e594e",
+				"x": 6,
+				"y": 3,
+				"w": 6,
+				"h": 3,
+				"name": "Requests - :environment: - :cluster: - all topics",
+				"queries": [
+					{
+						"query": "SELECT mean(\"TotalProduceRequestsPerSec\") AS \"Produce Reqs/Sec\", mean(\"TotalFetchRequestsPerSec\") * -1 AS \"Consume Reqs/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' GROUP BY time(:interval:),\"topic\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"TotalProduceRequestsPerSec\") AS \"Produce Reqs/Sec\", mean(\"TotalFetchRequestsPerSec\") * -1 AS \"Consume Reqs/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' GROUP BY time(:interval:),\"topic\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "requests",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/cells/4092cccb-b3d2-4d0f-8c38-98fbda6e594e"
+				}
+			},
+			{
+				"i": "527b8097-566a-4baa-a822-2c0c42d490ab",
+				"x": 0,
+				"y": 3,
+				"w": 6,
+				"h": 3,
+				"name": "Requests - :environment: - :cluster: - :topic:",
+				"queries": [
+					{
+						"query": "SELECT mean(\"TotalProduceRequestsPerSec\") AS \"Produce Reqs/Sec\", mean(\"TotalFetchRequestsPerSec\") * -1 AS \"Consume Reqs/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' AND \"topic\"=':topic:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"TotalProduceRequestsPerSec\") AS \"Produce Reqs/Sec\", mean(\"TotalFetchRequestsPerSec\") * -1 AS \"Consume Reqs/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' AND \"topic\"=':topic:' GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "requests",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/cells/527b8097-566a-4baa-a822-2c0c42d490ab"
+				}
+			},
+			{
+				"i": "a1a0155e-1e52-452a-a5e0-430372bce905",
+				"x": 6,
+				"y": 6,
+				"w": 6,
+				"h": 3,
+				"name": "Produced Messages - :environment: - :cluster: - all topics",
+				"queries": [
+					{
+						"query": "SELECT mean(\"MessagesInPerSec\") AS \"Messages/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' GROUP BY time(:interval:),\"topic\" FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "kafka.server_BrokerTopicMetrics_topic",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "Messages/Sec",
+									"args": [
+										{
+											"value": "MessagesInPerSec",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"environment": [
+									":environment:"
+								],
+								"kafka_cluster": [
+									":cluster:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": [
+									"topic"
+								]
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "messages",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line-stacked",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/cells/a1a0155e-1e52-452a-a5e0-430372bce905"
+				}
+			},
+			{
+				"i": "4547eaeb-3d58-4448-82a4-efc238492422",
+				"x": 0,
+				"y": 6,
+				"w": 6,
+				"h": 3,
+				"name": "Produced Messages - :environment: - :cluster: - :topic:",
+				"queries": [
+					{
+						"query": "SELECT mean(\"MessagesInPerSec\") AS \"Messages/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' AND \"topic\"=':topic:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "telegraf",
+							"measurement": "kafka.server_BrokerTopicMetrics_topic",
+							"retentionPolicy": "",
+							"fields": [
+								{
+									"value": "mean",
+									"type": "func",
+									"alias": "Messages/Sec",
+									"args": [
+										{
+											"value": "MessagesInPerSec",
+											"type": "field",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"environment": [
+									":environment:"
+								],
+								"kafka_cluster": [
+									":cluster:"
+								],
+								"topic": [
+									":topic:"
+								]
+							},
+							"groupBy": {
+								"time": "auto",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"fill": "null",
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "messages",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/cells/4547eaeb-3d58-4448-82a4-efc238492422"
+				}
+			},
+			{
+				"i": "af1f1378-34e5-480c-b305-5a8893c6cf82",
+				"x": 6,
+				"y": 0,
+				"w": 6,
+				"h": 3,
+				"name": "Throughput Volume - :environment: - :cluster: - all topics",
+				"queries": [
+					{
+						"query": "SELECT mean(\"BytesInPerSec\") AS \"Produced Bytes/Sec\", mean(\"BytesOutPerSec\") * -1 AS \"Consumed Bytes/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' GROUP BY time(:interval:),\"topic\" FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"BytesInPerSec\") AS \"Produced Bytes/Sec\", mean(\"BytesOutPerSec\") * -1 AS \"Consumed Bytes/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' GROUP BY time(:interval:),\"topic\" FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "bytes/sec",
+						"prefix": "",
+						"suffix": "B",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/cells/af1f1378-34e5-480c-b305-5a8893c6cf82"
+				}
+			},
+			{
+				"i": "50372b9c-54f7-446b-aadc-bd68868141d2",
+				"x": 0,
+				"y": 0,
+				"w": 6,
+				"h": 3,
+				"name": "Throughput Volume - :environment: - :cluster: - :topic:",
+				"queries": [
+					{
+						"query": "SELECT mean(\"BytesInPerSec\") AS \"Produced Bytes/Sec\", mean(\"BytesOutPerSec\") * -1 AS \"Consumed Bytes/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' AND \"topic\"=':topic:' GROUP BY time(:interval:) FILL(null)",
+						"queryConfig": {
+							"database": "",
+							"measurement": "",
+							"retentionPolicy": "",
+							"fields": [],
+							"tags": {},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": false,
+							"rawText": "SELECT mean(\"BytesInPerSec\") AS \"Produced Bytes/Sec\", mean(\"BytesOutPerSec\") * -1 AS \"Consumed Bytes/Sec\" FROM \"telegraf\"..\"kafka.server_BrokerTopicMetrics_topic\" WHERE time > :dashboardTime: AND \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:' AND \"topic\"=':topic:' GROUP BY time(:interval:) FILL(null)",
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "bytes/sec",
+						"prefix": "",
+						"suffix": "B",
+						"base": "2",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "line",
+				"colors": [
+					{
+						"id": "d301699d-ca21-4b74-9908-9637897b0074",
+						"type": "scale",
+						"hex": "#31C0F6",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "41f720f8-d7c4-4aff-86b8-dfd5dd6ea1d2",
+						"type": "scale",
+						"hex": "#A500A5",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					},
+					{
+						"id": "52f38d2b-75ba-4227-963a-07756fa09af8",
+						"type": "scale",
+						"hex": "#FF7E27",
+						"name": "Nineteen Eighty Four",
+						"value": "0"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "",
+						"visible": true
+					}
+				],
+				"timeFormat": "MM/DD/YYYY HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/cells/50372b9c-54f7-446b-aadc-bd68868141d2"
+				}
+			}
+		],
+		"templates": [
+			{
+				"tempVar": ":environment:",
+				"values": [
+					{
+						"value": "prod",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "b63a047a-9558-4aa1-a1aa-212baae7b553",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"java.lang_Memory\" WITH KEY=\"environment\" WHERE \"platform\"='kafka'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/templates/b63a047a-9558-4aa1-a1aa-212baae7b553"
+				}
+			},
+			{
+				"tempVar": ":cluster:",
+				"values": [
+					{
+						"value": "irobert",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "19f9063c-2055-424b-b8df-7d4c38c6b3db",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"kafka.server_BrokerTopicMetrics_topic\" WITH KEY=\"kafka_cluster\" WHERE \"environment\"=':environment:'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/templates/19f9063c-2055-424b-b8df-7d4c38c6b3db"
+				}
+			},
+			{
+				"tempVar": ":topic:",
+				"values": [
+					{
+						"value": "__consumer_offsets",
+						"type": "influxql",
+						"selected": true
+					}
+				],
+				"id": "3a2ff18f-50ef-4403-8b1e-fa61c86b5b3d",
+				"type": "influxql",
+				"label": "",
+				"query": {
+					"influxql": "SHOW TAG VALUES ON \"telegraf\" FROM \"kafka.server_BrokerTopicMetrics_topic\" WITH KEY=\"topic\" WHERE \"environment\"=':environment:' AND \"kafka_cluster\"=':cluster:'",
+					"measurement": "",
+					"tagKey": "",
+					"fieldKey": ""
+				},
+				"sourceID": "dynamic",
+				"links": {
+					"self": "/chronograf/v1/dashboards/50/templates/3a2ff18f-50ef-4403-8b1e-fa61c86b5b3d"
+				}
+			}
+		],
+		"name": "Confluent Platform: Kafka Topic Throughput",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/50",
+			"cells": "/chronograf/v1/dashboards/50/cells",
+			"templates": "/chronograf/v1/dashboards/50/templates"
+		}
+	}
+}
